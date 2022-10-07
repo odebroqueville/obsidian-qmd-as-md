@@ -10,10 +10,11 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 	mySetting: 'default'
 }
 
-export default class MyPlugin extends Plugin {
+export default class QMDAsMdPlugin extends Plugin {
 	settings: MyPluginSettings;
 
 	async onload() {
+		super.onload();
 		await this.loadSettings();
 
 		// This creates an icon in the left ribbon.
@@ -76,6 +77,9 @@ export default class MyPlugin extends Plugin {
 
 		// When registering intervals, this function will automatically clear the interval when the plugin is disabled.
 		this.registerInterval(window.setInterval(() => console.log('setInterval'), 5 * 60 * 1000));
+		
+		// register the view and extensions
+        this.registerExtensions(["qmd"], "markdown");
 	}
 
 	onunload() {
