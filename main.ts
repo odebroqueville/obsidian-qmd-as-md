@@ -112,9 +112,9 @@ class SampleModal extends Modal {
 }
 
 class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+	plugin: QMDAsMdPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: QMDAsMdPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
