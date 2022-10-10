@@ -79,7 +79,7 @@ export default class QMDAsMdPlugin extends Plugin {
 		this.registerInterval(window.setInterval(() => console.log('setInterval'), 5 * 60 * 1000));
 		
 		// register the view and extensions
-        this.registerExtensions(["qmd"], "markdown");
+        this.registerExtensions(["rmd","qmd"], "markdown");
 	}
 
 	onunload() {
